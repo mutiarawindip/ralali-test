@@ -4,20 +4,27 @@ const page = require('../page/movie-list-page.js');
 
 const testCase = {
  "positive" : {
-    "getList" : "As a User, I want to be able to get OMDB Movie list",
+    "getList" : "I should get the movie list properly based on the keyword search",
+    "resetSearch" : "I should get empty result and empty field(s) everytime 'Reset' button is used"
  },
  "negative" : {
-    "noSearch" : "As a User, I should got error message when I send request without key of search",
-    "invalidApiKey" : "As a User, I should got error 401 when I send request with invalid API Key"
+    "noList" : "Users should get error message when they send request without key of search",
+    "invalidApiKey" : "Users should get error 401 when they send request with invalid API Key"
+    // "invalidApiLink" : "Users should get error 404 when they send request with invalid API Link",
  }
 }
 
-describe('OMDB Movie List', () => {
+describe('OMDB Movie List API test', () => {
  const apiKey = '1646c2b7';
  const invalidApiKey = 'asdfghjk';
  const keySearch = 'lord';
 
  it('@get ${testCase.positive.getList}', async() => {
+  const response = await page.getMovieList(apiKey, keySearch);
+  assert(response.status).to.equal(200);
+ }),
+
+ it('@get ${testCase.positive.resetSearch}', async() => {
   const response = await page.getMovieList(apiKey, keySearch);
   assert(response.status).to.equal(200);
  }),
@@ -35,4 +42,11 @@ describe('OMDB Movie List', () => {
    assert(response.body.Response).to.equal('False');
    assert(response.body.Error).to.equal('Invalid API key!');
   })
+
+ /*it('@get ${testCase.negative.invalidApiLink}', async() => {
+   const response = await page.getMovieList(invalidApiLink, keySearch);
+   assert(response.status).to.equal(404, response.body.Error);
+   assert(response.body.Response).to.equal('False');
+   assert(response.body.Error).to.equal('Invalid API Link!');
+  })*/
 }) 

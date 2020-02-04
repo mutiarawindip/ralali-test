@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 3,
-    "passes": 3,
+    "tests": 4,
+    "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2020-02-04T14:47:54.152Z",
-    "end": "2020-02-04T14:47:59.965Z",
-    "duration": 5813,
-    "testsRegistered": 3,
+    "start": "2020-02-04T16:38:56.994Z",
+    "end": "2020-02-04T16:38:59.981Z",
+    "duration": 2987,
+    "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "69028e30-a348-4d23-a08c-fc787b18955b",
+    "uuid": "4dae67ff-3441-4528-a8be-f449c25af60c",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,8 +28,8 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "ead61a7b-eee3-4d74-ac4b-062b097bab70",
-        "title": "OMDB Movie List",
+        "uuid": "85a09f3a-a693-4443-8da7-3af15cda1919",
+        "title": "OMDB Movie List API test",
         "fullFile": "E:\\Kuliah\\Ralali\\ralali-test\\poc-mocha-chai\\api\\test\\movie-list-test.js",
         "file": "\\api\\test\\movie-list-test.js",
         "beforeHooks": [],
@@ -37,9 +37,9 @@
         "tests": [
           {
             "title": "@get ${testCase.positive.getList}",
-            "fullTitle": "OMDB Movie List @get ${testCase.positive.getList}",
+            "fullTitle": "OMDB Movie List API test @get ${testCase.positive.getList}",
             "timedOut": false,
-            "duration": 4502,
+            "duration": 2476,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -48,15 +48,32 @@
             "code": "const response = await page.getMovieList(apiKey, keySearch);\nassert(response.status).to.equal(200);",
             "err": {},
             "isRoot": false,
-            "uuid": "9945ae4e-3233-4490-ac25-50fedd8b94dd",
+            "uuid": "dba88a16-b2ee-4a48-9590-882c3e29f9cf",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "@get ${testCase.positive.resetSearch}",
+            "fullTitle": "OMDB Movie List API test @get ${testCase.positive.resetSearch}",
+            "timedOut": false,
+            "duration": 136,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "const response = await page.getMovieList(apiKey, keySearch);\nassert(response.status).to.equal(200);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "96261a28-fa56-46be-898a-23939ec37c27",
             "isHook": false,
             "skipped": false
           },
           {
             "title": "@get ${testCase.negative.noSearch}",
-            "fullTitle": "OMDB Movie List @get ${testCase.negative.noSearch}",
+            "fullTitle": "OMDB Movie List API test @get ${testCase.negative.noSearch}",
             "timedOut": false,
-            "duration": 594,
+            "duration": 134,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -65,15 +82,15 @@
             "code": "const response = await page.getMovieList(apiKey, '');\nassert(response.status).to.equal(200, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Something went wrong.');",
             "err": {},
             "isRoot": false,
-            "uuid": "4bfd131d-1a8d-4dc3-9c21-5e9b58aab61d",
+            "uuid": "36cb0dd0-58ec-46c9-8711-d937e55f7252",
             "isHook": false,
             "skipped": false
           },
           {
             "title": "@get ${testCase.negative.invalidApiKey}",
-            "fullTitle": "OMDB Movie List @get ${testCase.negative.invalidApiKey}",
+            "fullTitle": "OMDB Movie List API test @get ${testCase.negative.invalidApiKey}",
             "timedOut": false,
-            "duration": 615,
+            "duration": 139,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -82,21 +99,22 @@
             "code": "const response = await page.getMovieList(invalidApiKey, keySearch);\nassert(response.status).to.equal(401, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Invalid API key!');",
             "err": {},
             "isRoot": false,
-            "uuid": "035caf45-2417-4035-932a-b25de76bb1f9",
+            "uuid": "9eb2df18-78f5-4a35-b30b-c23292df6851",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "9945ae4e-3233-4490-ac25-50fedd8b94dd",
-          "4bfd131d-1a8d-4dc3-9c21-5e9b58aab61d",
-          "035caf45-2417-4035-932a-b25de76bb1f9"
+          "dba88a16-b2ee-4a48-9590-882c3e29f9cf",
+          "96261a28-fa56-46be-898a-23939ec37c27",
+          "36cb0dd0-58ec-46c9-8711-d937e55f7252",
+          "9eb2df18-78f5-4a35-b30b-c23292df6851"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 5711,
+        "duration": 2885,
         "root": false,
         "rootEmpty": false,
         "_timeout": 180000
