@@ -10,7 +10,8 @@ const testCase = {
  "negative" : {
     "noList" : "Users should get error message when they send request without key of search",
     "invalidApiKey" : "Users should get error 401 when they send request with invalid API Key"
-    // "invalidApiLink" : "Users should get error 404 when they send request with invalid API Link",
+    // "restrictedMethod" : "Users should get error 405 when they send request to delete any datas from the OMDB Movie List",
+    // "invalidApiLink" : "Users should get error 404 when they send request with invalid API Link"
  }
 }
 
@@ -43,10 +44,17 @@ describe('OMDB Movie List API test', () => {
    assert(response.body.Error).to.equal('Invalid API key!');
   })
 
- /*it('@get ${testCase.negative.invalidApiLink}', async() => {
-   const response = await page.getMovieList(invalidApiLink, keySearch);
-   assert(response.status).to.equal(404, response.body.Error);
-   assert(response.body.Response).to.equal('False');
-   assert(response.body.Error).to.equal('Invalid API Link!');
-  })*/
-}) 
+ // it('@get ${testCase.negative.restrictedMethod}', async() => {
+ //  const response = await page.getMovieList(apiKey, keySearch);
+ //  assert(response.status).to.equal(405, response.body.Error);
+ //  assert(response.body.Response).to.equal('False');
+ //  assert(response.body.Error).to.equal('Method Not Allowed');
+ // }),
+
+ // it('@get ${testCase.negative.invalidApiLink}', async() => {
+ //   const response = await page.getMovieList(invalidApiLink, keySearch);
+ //   assert(response.status).to.equal(404, response.body.Error);
+ //   assert(response.body.Response).to.equal('False');
+ //   assert(response.body.Error).to.equal('Result Not Found. Invalid API Link!');
+ //  })
+})

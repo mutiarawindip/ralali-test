@@ -5,9 +5,9 @@
     "passes": 4,
     "pending": 0,
     "failures": 0,
-    "start": "2020-02-04T16:38:56.994Z",
-    "end": "2020-02-04T16:38:59.981Z",
-    "duration": 2987,
+    "start": "2020-02-05T00:43:08.313Z",
+    "end": "2020-02-05T00:43:09.033Z",
+    "duration": 720,
     "testsRegistered": 4,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "4dae67ff-3441-4528-a8be-f449c25af60c",
+    "uuid": "783c30fe-6b76-4fa0-9d78-88db9bc154c0",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "85a09f3a-a693-4443-8da7-3af15cda1919",
+        "uuid": "973736b3-3276-456c-9ccc-97747487d95b",
         "title": "OMDB Movie List API test",
         "fullFile": "E:\\Kuliah\\Ralali\\ralali-test\\poc-mocha-chai\\api\\test\\movie-list-test.js",
         "file": "\\api\\test\\movie-list-test.js",
@@ -39,7 +39,7 @@
             "title": "@get ${testCase.positive.getList}",
             "fullTitle": "OMDB Movie List API test @get ${testCase.positive.getList}",
             "timedOut": false,
-            "duration": 2476,
+            "duration": 266,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -48,7 +48,7 @@
             "code": "const response = await page.getMovieList(apiKey, keySearch);\nassert(response.status).to.equal(200);",
             "err": {},
             "isRoot": false,
-            "uuid": "dba88a16-b2ee-4a48-9590-882c3e29f9cf",
+            "uuid": "06deb890-eb4b-4819-8514-0a27ba10a5bd",
             "isHook": false,
             "skipped": false
           },
@@ -56,7 +56,7 @@
             "title": "@get ${testCase.positive.resetSearch}",
             "fullTitle": "OMDB Movie List API test @get ${testCase.positive.resetSearch}",
             "timedOut": false,
-            "duration": 136,
+            "duration": 135,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -65,7 +65,7 @@
             "code": "const response = await page.getMovieList(apiKey, keySearch);\nassert(response.status).to.equal(200);",
             "err": {},
             "isRoot": false,
-            "uuid": "96261a28-fa56-46be-898a-23939ec37c27",
+            "uuid": "0bd23326-0f24-48e9-b0f8-6263e85a483b",
             "isHook": false,
             "skipped": false
           },
@@ -73,7 +73,7 @@
             "title": "@get ${testCase.negative.noSearch}",
             "fullTitle": "OMDB Movie List API test @get ${testCase.negative.noSearch}",
             "timedOut": false,
-            "duration": 134,
+            "duration": 129,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -82,7 +82,7 @@
             "code": "const response = await page.getMovieList(apiKey, '');\nassert(response.status).to.equal(200, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Something went wrong.');",
             "err": {},
             "isRoot": false,
-            "uuid": "36cb0dd0-58ec-46c9-8711-d937e55f7252",
+            "uuid": "04661be8-8741-450d-9974-7c9c400e3f97",
             "isHook": false,
             "skipped": false
           },
@@ -90,7 +90,7 @@
             "title": "@get ${testCase.negative.invalidApiKey}",
             "fullTitle": "OMDB Movie List API test @get ${testCase.negative.invalidApiKey}",
             "timedOut": false,
-            "duration": 139,
+            "duration": 118,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -99,22 +99,22 @@
             "code": "const response = await page.getMovieList(invalidApiKey, keySearch);\nassert(response.status).to.equal(401, response.body.Error);\nassert(response.body.Response).to.equal('False');\nassert(response.body.Error).to.equal('Invalid API key!');",
             "err": {},
             "isRoot": false,
-            "uuid": "9eb2df18-78f5-4a35-b30b-c23292df6851",
+            "uuid": "17902951-008f-467a-bb4c-d9619a4f83cb",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "dba88a16-b2ee-4a48-9590-882c3e29f9cf",
-          "96261a28-fa56-46be-898a-23939ec37c27",
-          "36cb0dd0-58ec-46c9-8711-d937e55f7252",
-          "9eb2df18-78f5-4a35-b30b-c23292df6851"
+          "06deb890-eb4b-4819-8514-0a27ba10a5bd",
+          "0bd23326-0f24-48e9-b0f8-6263e85a483b",
+          "04661be8-8741-450d-9974-7c9c400e3f97",
+          "17902951-008f-467a-bb4c-d9619a4f83cb"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 2885,
+        "duration": 648,
         "root": false,
         "rootEmpty": false,
         "_timeout": 180000

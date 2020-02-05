@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test-api": "mocha ./api/test --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000",
-    "reports": "report reports/mochawesome/mochawesome.html"
+    "reports": "open reports/mochawesome/mochawesome.html"
   },
   "dependencies": {
     "chai": "^4.1.2",
